@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajax</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.7.31">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .background{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background: url("pictures/background.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                z-index: -1;
+            }
+            .userInput{
+                position: relative;
+                box-sizing: border-box;
+                width: 500px;
+                height: 150px;
+                background-color: #82cce2cb;
+                border-radius: 10px;
+                margin: 250px auto;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                transition: 0.5s ease-in-out;
+            }
+            .userInput:hover{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.089), 0 6px 20px rgba(0, 0, 0, 0.103);
+            }
+            .userInput>p{
+                display: block;
+                width: 300px;
+                height: 50px;
+                line-height: 50px;
+                padding-right: 200px;
+                text-align: right;
+            }
+            .userInput>p>input{
+                outline: none;
+                border: none;
+                border-radius: 4px;
+                padding: 4px;
+            }
+            .userInput>button{
+                position: absolute;
+                top:40px;
+                right: 40px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background-color: #fff;
+                border: none;
+                outline: none;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 40px;
+                line-height: 70px;
+                transition: 0.5s ease-in-out;
+            }
+            .userInput>button:hover{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        </style>
+        <script src="ZA_myAjax.js"></script>
+        <script>
+            window.onload=function(){
+                var btn=document.querySelector(".userInput>button");
+                var un=document.querySelector(".un").value;
+                var up=document.querySelector(".up").value;
+                console.log(un,up);
+                btn.onclick=function(){
+                    ajax("BC_AjaxPackingAddPara.php",{
+                        "userName":un,
+                        "userPassword":up
+                    },30000,function(xhr){
+                        alert(xhr.responseText);
+                    },function(xhr){
+                        alert("error");
+                    });
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="background"></div>
+        <form class="userInput" action="AB_aboutGet.php" method="GET">
+            <!--指定提交的服务器和提交方式-->
+            <p>用户名: <input class="un" type="text" name="userName"></p>
+            <p>密码  : <input class="up" type="password" name="userPassword"></p>
+            <button>→</button>
+        </form>
+    </body>
+</html>

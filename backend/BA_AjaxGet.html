@@ -34,6 +34,7 @@
                         if((xmlhttp.status>=200 && xmlhttp.status<300)||xmlhttp.status==304){
                             if(xmlhttp.readyState==4){
                                 console.log("accepted data from server");
+                                alert(xmlhttp.responseText);
                             }
                         }else{
                             console.log("unable to accepted data from server");

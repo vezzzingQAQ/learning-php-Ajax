@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajax</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.7.31">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+        </style>
+        <script src="ZA_myAjax.js"></script>
+        <script>
+            window.onload=function(){
+                var btn=document.querySelector("button");
+                btn.onclick=function(){
+                    ajax("BA_AjaxGet.php",{
+                        "userName":"vezzzingQAQ",
+                        "userPassword":"1234567"
+                    },3000,function(xhr){
+                        alert(xhr.responseText);
+                    },function(xhr){
+                        alert("error");
+                    });
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button>发送请求</button>
+    </body>
+</html>

@@ -1,3 +1,3 @@
 <?php
-echo("<p>ajax get page</p>");
+echo("ajax get page");
 ?>
