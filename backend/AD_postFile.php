@@ -1,0 +1,15 @@
+<?php
+//上传文件
+//获取上传的文件
+print_r($_POST);
+echo("<br>");
+print_r($_FILES);
+//获取上传文件对应的字典
+$fileInfo=$_FILES["uploadFile"];
+$fileName=$fileInfo["name"];
+$filePath=$fileInfo["tmp_name"];
+echo("<br>");
+echo($fileName);
+echo("<br>");
+echo("$filePath");
+?>
