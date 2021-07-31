@@ -16,4 +16,5 @@ echo("$filePath");
 //移动文件
 move_uploaded_file($filePath,"./source/".$fileName);//旧的路径，新的路径
 //上传到这里的source文件夹
+//从tmp移出
 ?>
