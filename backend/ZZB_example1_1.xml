@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+<!--xml必须要有根节点-->
+    <shocked>
+        <title>已经九点半了</title>
+        <info>啊啊啊啊啊啊啊啊啊啊啊啊啊啊</info>
+        <img>pictures/vezzzinga.jpg</img>
+    </shocked>
+    <sleepy>
+        <title>熬夜肝大作业后</title>
+        <info>俺要炸了国美!!!</info>
+        <img>pictures/vezzzingb.jpg</img>
+    </sleepy>
+    <normal>
+        <title>2332332333</title>
+        <info>红红火火恍恍惚惚</info>
+        <img>pictures/vezzzingc.jpg</img>
+    </normal>
+</person>

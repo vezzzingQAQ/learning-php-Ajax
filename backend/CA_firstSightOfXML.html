@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>xml</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.7.31">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                $("button").click(function(){
+                    $.ajax({
+                        type:"GET",
+                        url:"CA_firstSightOfXML.php",
+                        data:{"name":"vezzzing"},
+                        success:function(msg){
+                            console.log(msg);
+                            console.log(msg.querySelector("name").innerHTML);
+                        },
+                        error:function(msg){
+                            alert(msg.status);
+                        }
+                    })
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <button>发送请求</button>
+    </body>
+</html>
