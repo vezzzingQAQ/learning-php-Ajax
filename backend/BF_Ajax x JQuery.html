@@ -17,7 +17,7 @@
                     $.ajax({
                         type:"GET",
                         url:"BF_Ajax x JQuery.php",
-                        data:"name=vezzzing&password=1234",
+                        data:{"name":"vezzzing","password":"1234"},
                         success:function(msg){
                             alert("data saved"+msg);
                         },
