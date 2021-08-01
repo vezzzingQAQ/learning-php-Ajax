@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>example1</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.7.31">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+        .container{
+            display: block;
+            margin: 200px auto;
+            text-align: center;
+        }
+        button{
+            background-color: #fff;
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 30px;
+            border-radius: 3px;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                $("button").click(function(){
+                    var selfName=$(this).attr("name");
+                    $.ajax({
+                        type:"GET",
+                        url:"ZZB_example1_1.php",
+                        timeout:3000,
+                        success:function(msg){
+                            //alert(msg);
+                            //用xml实现
+                            $(".title").text(msg.querySelector(selfName+" title").innerHTML);
+                            $(".info").text(msg.querySelector(selfName+" info").innerHTML);
+                            $("img").attr("src",msg.querySelector(selfName+" img").innerHTML);
+                        },
+                        error:function(xhr){
+                            alert(xhr.status);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <p class="title">标题放这里</p>
+            <img src="pictures/vezzzingd.jpg" alt="">
+            <p class="info">简介放这里</p>
+            <button class="shocked" name="shocked">shocked</button>
+            <button class="sleepy" name="sleepy">sleepy</button>
+            <button class="normal" name="normal">normal</button>
+        </div>
+    </body>
+</html>
