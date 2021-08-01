@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajax</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.7.31">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            window.onload=function(){
+                var btn=document.querySelector("button");
+                btn.onclick=function(){
+                    $.ajax({
+                        type:"GET",
+                        url:"BF_Ajax x JQuery.php",
+                        data:"name=vezzzing&password=1234",
+                        success:function(msg){
+                            alert("data saved"+msg);
+                        },
+                        error:function(xhr){
+                            alert(xhr.status);
+                        }
+                    })
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button>发送请求</button>
+    </body>
+</html>
