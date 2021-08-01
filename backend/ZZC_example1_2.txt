@@ -1,0 +1,17 @@
+{
+    "shocked":{
+        "title":"已经九点半了",
+        "info":"啊啊啊啊嗷嗷嗷",
+        "img":"pictures/vezzzinga.jpg"
+    },
+    "sleepy":{
+        "title":"熬夜肝大作业后",
+        "info":"俺要炸了国美!!!",
+        "img":"pictures/vezzzingb.jpg"
+    },
+    "normal":{
+        "title":"2332332333",
+        "info":"红红火火恍恍惚惚",
+        "img":"pictures/vezzzingc.jpg"
+    }
+}
