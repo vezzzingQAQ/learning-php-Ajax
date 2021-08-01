@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajax</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.7.31">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+        </style>
+        <script>
+            window.onload=function(){
+                var btn=document.querySelector("button");
+                btn.onclick=function(){
+                    //创建一个异步对象
+                    var xmlhttp=new XMLHttpRequest();
+                    //设置请求方式和请求地址
+                    xmlhttp.open("POST","BD_AjaxPost.php",true);//第三参永远true
+                    //发送请求
+                    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                    xmlhttp.send("userName=vezzzing&userPassword=12345");
+                    //监听状态变化
+                    /*
+                    存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+                    0: 请求未初始化
+                    1: 服务器连接已建立
+                    2: 请求已接收
+                    3: 请求处理中
+                    4: 请求已完成，且响应已就绪
+                    */
+                    xmlhttp.onreadystatechange=function(){
+                        //处理返回的结果
+                        //判断请求是否成功
+                        if((xmlhttp.status>=200 && xmlhttp.status<300)||xmlhttp.status==304){
+                            if(xmlhttp.readyState==4){
+                                console.log("accepted data from server");
+                                alert(xmlhttp.responseText);
+                            }
+                        }else{
+                            console.log("unable to accepted data from server");
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button>发送请求</button>
+    </body>
+</html>

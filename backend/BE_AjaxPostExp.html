@@ -76,14 +76,14 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
         </style>
-        <script src="ZA_myAjaxGet.js"></script>
+        <script src="ZB_myAjax.js"></script>
         <script>
             window.onload=function(){
                 var btn=document.querySelector(".userInput>button");
                 btn.onclick=function(){
                     var un=document.querySelector(".un").value;
                     var up=document.querySelector(".up").value;
-                    ajax("BC_AjaxPackingAddPara.php",{
+                    ajax("POST","BE_AjaxPostExp.php",{
                         "userName":un,
                         "userPassword":up
                     },3000,function(xhr){
